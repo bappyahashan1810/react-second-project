@@ -21,6 +21,7 @@ function App() {
     <div className="App">
 
       <ExternalUser></ExternalUser>
+      <ExternalUser1></ExternalUser1>
       {/* {
         products.map(product => <Product name={product.name} price={product.price}></Product>)
       }
@@ -37,6 +38,35 @@ function App() {
     </div>
   );
 }
+function ExternalUser1() {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(res => res.json())
+      .then(data => setUsers(data))
+  }, [])
+
+  return (
+    <div >
+      <h1>Total Post: {users.length}</h1>
+      {
+        users.map(user => <Post userId={user.userId} id={user.id} title={user.title} body={user.body}></Post>)
+      }
+
+    </div>
+
+  )
+}
+function Post(props) {
+  return (
+    <div className="product">
+      <h1>UserID: {props.userId}</h1>
+      <h3>ID: {props.id}</h3>
+      <h2>Title: {props.title}</h2>
+      <p>{props.body}</p>
+    </div>
+  )
+}
 
 function ExternalUser() {
   const [users, setUsers] = useState([]);
@@ -45,7 +75,7 @@ function ExternalUser() {
       .then(res => res.json())
       .then(data => setUsers(data))
   }, [])
-  console.log(users);
+  // console.log(users);
 
   return (
     <div>
@@ -71,6 +101,7 @@ function User(props) {
 
   )
 }
+
 
 
 

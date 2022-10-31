@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   // const products = [
@@ -19,6 +19,8 @@ function App() {
   // ]
   return (
     <div className="App">
+
+      <ExternalUser></ExternalUser>
       {/* {
         products.map(product => <Product name={product.name} price={product.price}></Product>)
       }
@@ -29,32 +31,54 @@ function App() {
       {/* <Product name="laptop" price="120000 BD"></Product>
       <Product name="Phone" price="10500 BD"></Product>
   <Product name="R15(bike)" price="600500 BD" ></Product> */}
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
 
 
     </div>
   );
 }
 
+function ExternalUser() {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+      .then(data => console.log(data))
+  }, [])
 
-function Counter() {
-  const [count, setCount] = useState(10);
-  const increaseCount = () => setCount(count + 1);
-  const decreaseCount = () => setCount(count - 1);
   return (
-    <div className='counter'>
-      <h1>Counter: {count} </h1>
-      <h1>Increase</h1>
-      <button className='button' onClick={increaseCount}>Increase</button>
-      <h1>Decrease</h1>
-      <button className='button' onClick={decreaseCount}>Decrease:</button>
+    <div>
+      <h1>External User</h1>
     </div>
-
 
 
 
   );
 }
+
+
+
+
+
+
+// function Counter() {
+//   const [count, setCount] = useState(10);
+//   const increaseCount = () => setCount(count + 1);
+//   const decreaseCount = () => setCount(count - 1);
+//   return (
+//     <div className='counter'>
+//       <h1>Counter: {count} </h1>
+//       <h1>Increase</h1>
+//       <button className='button' onClick={increaseCount}>Increase</button>
+//       <h1>Decrease</h1>
+//       <button className='button' onClick={decreaseCount}>Decrease:</button>
+//     </div>
+
+
+
+
+//   );
+// }
 
 // function Product(props) {
 //   return (

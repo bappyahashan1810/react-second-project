@@ -1,21 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
-  const products = [
-    { name: 'laptop', price: 120000 },
-    { name: 'Phone', price: 10500 },
-    { name: 'R15(bike)', price: 600500 },
-    { name: "Flat", price: 10600500 }
-  ]
+  // const products = [
+  //   { name: 'laptop', price: 120000 },
+  //   { name: 'Phone', price: 10500 },
+  //   { name: 'R15(bike)', price: 600500 },
+  //   { name: "Flat", price: 10600500 }
+  // ]
 
-  const bikes = [
-    { name: 'Apache', version: 'v3', price: 2100000 },
-    { name: 'Palser', version: 'double disc', price: 2300000 },
-    { name: 'Yahamaha', version: 'v3', price: 6100000 },
-    { name: 'Suzuki', version: 'v3', price: 3100000 },
+  // const bikes = [
+  //   { name: 'Apache', version: 'v3', price: 2100000 },
+  //   { name: 'Palser', version: 'double disc', price: 2300000 },
+  //   { name: 'Yahamaha', version: 'v3', price: 6100000 },
+  //   { name: 'Suzuki', version: 'v3', price: 3100000 },
 
-  ]
+  // ]
   return (
     <div className="App">
       {/* {
@@ -28,8 +29,25 @@ function App() {
       {/* <Product name="laptop" price="120000 BD"></Product>
       <Product name="Phone" price="10500 BD"></Product>
   <Product name="R15(bike)" price="600500 BD" ></Product> */}
+      <Counter></Counter>
+
 
     </div>
+  );
+}
+
+
+function Counter() {
+  const [count, setCount] = useState(55);
+  return (
+    <div>
+      <h1>Counter: {count} </h1>
+      <button>Increase</button>
+    </div>
+
+
+
+
   );
 }
 

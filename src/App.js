@@ -2,9 +2,33 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const products = [
+    { name: 'laptop', price: 120000 },
+    { name: 'Phone', price: 10500 },
+    { name: 'R15(bike)', price: 600500 },
+    { name: "Flat", price: 10600500 }
+  ]
+
+  const bikes = [
+    { name: 'Apache', version: 'v3', price: 2100000 },
+    { name: 'Palser', version: 'double disc', price: 2300000 },
+    { name: 'Yahamaha', version: 'v3', price: 6100000 },
+    { name: 'Suzuki', version: 'v3', price: 3100000 },
+
+  ]
   return (
     <div className="App">
-      <Product></Product>
+      {
+        products.map(product => <Product name={product.name} price={product.price}></Product>)
+      }
+      <h1>Bike name and price</h1>
+      {
+        bikes.map(bike => <Bikes name={bike.name} version={bike.version} price={bike.price}></Bikes>)
+      }
+      {/* <Product name="laptop" price="120000 BD"></Product>
+      <Product name="Phone" price="10500 BD"></Product>
+  <Product name="R15(bike)" price="600500 BD" ></Product> */}
+
     </div>
   );
 }
@@ -12,10 +36,22 @@ function App() {
 function Product(props) {
   return (
     <div className='product'>
-      <h1>Name:</h1>
-      <p>Price:</p>
+      <h1>Name: {props.name}</h1>
+      <p>Price: {props.price}</p>
+
     </div>
   );
 }
+
+function Bikes(props) {
+  return (
+    <div className="bike">
+      <h2>Name: {props.name}</h2>
+      <p>Version: {props.version}</p>
+      <h4>Price: {props.price}</h4>
+    </div>
+  )
+}
+
 
 export default App;

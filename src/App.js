@@ -18,13 +18,13 @@ function App() {
   ]
   return (
     <div className="App">
-      {
+      {/* {
         products.map(product => <Product name={product.name} price={product.price}></Product>)
       }
       <h1>Bike name and price</h1>
       {
         bikes.map(bike => <Bikes name={bike.name} version={bike.version} price={bike.price}></Bikes>)
-      }
+      } */}
       {/* <Product name="laptop" price="120000 BD"></Product>
       <Product name="Phone" price="10500 BD"></Product>
   <Product name="R15(bike)" price="600500 BD" ></Product> */}
@@ -33,25 +33,25 @@ function App() {
   );
 }
 
-function Product(props) {
-  return (
-    <div className='product'>
-      <h1>Name: {props.name}</h1>
-      <p>Price: {props.price}</p>
+// function Product(props) {
+//   return (
+//     <div className='product'>
+//       <h1>Name: {props.name}</h1>
+//       <p>Price: {props.price}</p>
 
-    </div>
-  );
-}
+//     </div>
+//   );
+// }
 
-function Bikes(props) {
-  return (
-    <div className="bike">
-      <h2>Name: {props.name}</h2>
-      <p>Version: {props.version}</p>
-      <h4>Price: {props.price}</h4>
-    </div>
-  )
-}
+// function Bikes(props) {
+//   return (
+//     <div className="bike">
+//       <h2>Name: {props.name}</h2>
+//       <p>Version: {props.version}</p>
+//       <h4>Price: {props.price}</h4>
+//     </div>
+//   )
+// }
 
 
 export default App;
